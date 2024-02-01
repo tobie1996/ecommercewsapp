@@ -4,15 +4,31 @@ import { IoMdArrowForward, IoMdTrash } from 'react-icons/io';
 import { SidebarContext } from '../contexts/SidebarContext';
 import { CartContext } from '../contexts/CartContext';
 import CartItem from './CartItem';
+// import { pdf } from '@react-pdf/renderer';
+
+
+
+// import {
+//   Document,
+//   Page,
+//   Text,
+//   View,
+//   Table,
+//   TableRow,
+//   TableCell,
+// } from 'react-pdf/dist/esm/components';
+
+
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
   const { cart, clearCart, total, itemAmount } = useContext(CartContext);
+  // const [whatsappLink, setWhatsAppLink] = useState(null); 
  
 
 
 
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClick = async () => {
     const orderData = {
       items: cart.map((item) => ({
         title: item.title,
@@ -22,10 +38,41 @@ const Sidebar = () => {
       total: total,
     };
 
-    const encodedMessage = encodeURIComponent(JSON.stringify(orderData));
-    const whatsappLink = `https://api.whatsapp.com/send?phone=237691690285&text=${encodedMessage}`;
+    // const pdfDoc = (
+    //   <Document>
+    //     <Page className="p-3">
+    //       <View className="mb-4">
+    //         <Text className="text-2xl font-bold mb-2">FACTURE</Text>
+    //         {/* Ajoutez d'autres informations d'en-tête si nécessaire */}
+    //       </View>
+    //       <View>
+    //         <Table className="w-full border-collapse">
+    //           <TableRow className="border-b border-gray-200">
+    //             <TableCell className="px-4 py-2 text-left font-bold">Article</TableCell>
+    //             <TableCell className="px-4 py-2 text-left font-bold">Prix</TableCell>
+    //             <TableCell className="px-4 py-2 text-left font-bold">Quantité</TableCell>
+    //           </TableRow>
+    //           {orderData.items.map((item) => (
+    //             <TableRow key={item.title} className="border-b border-gray-200">
+    //               <TableCell className="px-4 py-2">{item.title}</TableCell>
+    //               <TableCell className="px-4 py-2">{item.price}</TableCell>
+    //               <TableCell className="px-4 py-2">{item.quantity}</TableCell>
+    //             </TableRow>
+    //           ))}
+    //         </Table>
+    //         <View className="mt-4">
+    //           <Text className="font-bold">Total : {orderData.total}</Text>
+    //         </View>
+    //       </View>
+    //     </Page>
+    //   </Document>
+    // );
 
-    window.open(whatsappLink, '_blank'); // Use window.open for external link
+
+    // const pdfBlob = await pdf(pdfDoc);
+    // const url = URL.createObjectURL(pdfBlob);
+    // setWhatsAppLink(`https://api.whatsapp.com/send?phone=237691690285&text=${encodeURIComponent(url)}`);
+    // window.open(whatsappLink, '_blank'); // Use window.open for external link
   };
 
   return (
