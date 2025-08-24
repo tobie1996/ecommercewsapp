@@ -74,7 +74,6 @@ const {title,price,description, image} = product;
                 </div>
           </div>
         </section>
-
   </div>
   )
 }
