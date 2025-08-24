@@ -55,9 +55,17 @@ const {title,price,description, image} = product;
                 </div>
                 <p className='mb-8'>{description}</p>
                 <button onClick={()=> addToCart(product, product.id)}
-                 className='bg-black text-white py-4 px-8'>
-                 Add to cart
+                 className='bg-black text-white py-4 px-8 mr-4'>
+                 Ajouter au panier
                 </button>
+                <a
+                  href={`https://wa.me/237696926972?text=Bonjour,%20je%20souhaite%20commander%20le%20produit%20: %20${encodeURIComponent(title)}%20au%20prix%20de%20${price}$`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-green-500 hover:bg-green-600 text-white py-4 px-8 rounded transition-colors duration-200"
+                >
+                  Commander sur WhatsApp
+                </a>
               </div>
               </div>
               

@@ -46,12 +46,12 @@ const Product = ({product}) => {
                 onClick={e => { e.preventDefault(); addToCart(product); }}
                 className='bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transform hover:scale-110 transition-all duration-200 shadow-lg'
               >
-                <AiOutlineShoppingCart className='w-5 h-5' />
+               
               </button>
               <span
                 className='bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transform hover:scale-110 transition-all duration-200 shadow-lg cursor-pointer'
               >           
-                <BsEyeFill className='w-5 h-5' />
+             
               </span>
             </div>
           </div>
